@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery对象转DOM对象</title>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){  //等待DOM元素加载完毕
+			var $cr=$("#cr");	//jQuery对象
+			var cr=$cr[0];	//DOM对象，或者$cr.get(0);
+			$cr.click(function(){
+				if(cr.checked){		//DOM方式判断
+					alert("感谢你的支持，你可以继续操作。");
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="checkbox" id="cr"/><label for="cr">我己经阅读上面的制度。</label>
+</body>
+</html>

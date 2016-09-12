@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>音频视频</title>
+</head>
+<body>
+<!--controls使用默认播放等操作按钮-->
+<audio src="../raw/srxh.mp3" controls="controls">您的浏览器暂不支持</audio>
+<br/>
+<br/>
+<!--自定义按钮-->
+<button onclick="clickA()">播放/暂停</button>
+<audio id="a" src="../raw/srxh.mp3">您的浏览器暂不支持</audio>
+<script type="text/javascript">
+	var a=document.getElementById("a");
+	function clickA(){
+		if(a.paused){
+			a.play();
+		}else{a.pause();}
+	}
+</script>
+</body>
+</html>

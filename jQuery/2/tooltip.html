@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>超链接提示效果</title>
+	<style type="text/css">
+		#tooltip{
+			padding:10px 20px;
+			border: 1px solid green;
+			background-color: #DFF6E6;
+		}
+	</style>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var x=10;
+			var y=20;
+			$("a.tooltip").mouseover(function(){
+				this.myTitle=this.title;
+				this.title="";
+				var tooltip="<div id='tooltip'>"+this.myTitle+"</div>";   //创建<div>元素
+				$("body").append(tooltip);
+				$("#tooltip").css({
+					"top":(e.pageY+y)+"px",
+					"left":(e.pageX+x)+"px"
+				}).show("fast");
+			}).mouseout(function(){
+				this.title=this.myTitle;
+				$("#tooltip").remove();
+			}).mousemove(function(e){
+				$("#tooltip").css({
+					"top":(e.pageY+y)+"px",
+					"left":(e.pageX+x)+"px"
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<a href="#" title="这是自带提示1.">自带提示</a><br/><br/>
+	<a href="#" class="tooltip" title="这是我的超链接提示1.">提示</a>
+</body>
+</html>

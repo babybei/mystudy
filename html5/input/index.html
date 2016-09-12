@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>input 元素</title>
+</head>
+<body>
+	<!--url类型-->
+	<form>
+		<input type="url" name="url" value="http://www.baidu.com">
+		<input type="submit" value="提交" name="">
+	</form>
+	<br/>
+	<!--email类型-->
+	<form>
+		<input type="email" name="email" value="baby_bei_89@126.com">
+		<input type="submit" value="提交" name="">
+	</form>
+	<br/>
+	<!--date类型-->
+	<input type="date" name="date" name="">
+	<br/>
+	<!--time类型-->
+	<input type="time" name="time" value="10:00">
+	<br/>
+	<!--datetime类型-->
+	<input type="datetime" name="datetime">
+	<br/>
+	<!--datetime-local类型-->
+	<input type="datetime-local" name="datetimelocal">
+	<br/>
+	<!--month类型-->
+	<input type="month" name="month" value="2015-02-03">
+	<br/>
+	<!--week类型-->
+	<input type="week" name="week" >
+	<br/>
+	<!--number类型-->
+	<input type="number" name="number" value="15" min="10" max="100" step="5" >
+	<br/>
+	<!--计算器-->
+	<script type="text/javascript">
+		function sum(){
+			var n1=document.getElementById("num1").valueAsNumber;
+			var n2=document.getElementById("num2").valueAsNumber;
+			document.getElementById("result").valueAsNumber=n1+n2;
+		}
+	</script>
+	<form>
+		<input type="number" id="num1" name="">
+		+
+		<input type="number" id="num2" name="">
+		=
+		<input type="number" id="result" readonly="" name="">
+		<input type="button" name="" value="计算" onclick="sum()">
+	</form>
+	<br/>
+	<script type="text/javascript">
+		function ranges(){
+			document.getElementById("rangetext").innerText =document.getElementById("range").value;
+		}
+	</script>
+	<!--range类型-->
+	<span id="rangetext">25</span>
+	<input type="range" name="range" id="range" value="25" onchange="ranges()" min="0" max="100" step="5">
+	<br/>
+	<!--search类型-->
+	<input type="search" name="">
+	<br/>
+	<!--search类型-->
+	<input type="tel" name="">
+	<!--color类型-->
+	<input type="color" onchange="document.body.style.backgroundColor=document.getElementById('curentColor').textContent=this.value;" name="">
+	<span id="curentColor"></span>
+	<br/>
+	<!--output元素的追加-->
+	<script type="text/javascript">
+		function value_change(){
+			var number=document.getElementById("range2").value;
+			document.getElementById("output").value=number;
+		}
+	</script>
+	<form id="testform">
+		<input type="range" id="range2" min="0" max="100" step="5" value="10" onchange="value_change()" name="">
+		<output id="output">10</output>
+	</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas使用图像</title>
+	<script type="text/javascript">
+		function draw(id){
+			var canvas=document.getElementById(id);
+			var context=canvas.getContext("2d");
+			context.fillStyle="#eeeeef";
+			context.fillRect(0,0,500,500);
+			image=new Image();
+			image.src="../img/1b.jpg";
+			image.onload=function(){
+				drawImage(context,image);
+			}
+
+		}
+		function drawImage(context,image){
+			context.drawImage(image,50,50,200,200);
+			context.drawImage(image,270,270,380,380,230,230,250,250);
+		}
+	</script>
+</head>
+<body onload="draw('canvas')">
+<!--
+context.drawImage(img,x,y)
+context.drawImage(img,x,y,w,h)
+context.drawImage(img,sx,sy,sw,sh,dx,dy,dw,dh)
+sx,sy,sw,sh被复制,dx,dy,dw,dh复制后
+-->
+<canvas id="canvas" width="500" height="500"></canvas>
+</body>
+</html>

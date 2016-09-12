@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web存储-localStorage</title>
+	<script type="text/javascript">
+		var ta;
+		var btn;
+		window.onload=function(){
+			ta=document.getElementById("ta");
+			if(localStorage.text){
+				ta.value=localStorage.text;
+			}
+			btn=document.getElementById("btn");
+			btn.onclick=function(){
+				localStorage.text=ta.value;
+				//alert(ta.value);
+			}
+		}
+	</script>
+</head>
+<body>
+	<textarea style="width:200px; height:200px;" id="ta"></textarea>
+	<button id="btn">save</button>
+</body>
+</html>

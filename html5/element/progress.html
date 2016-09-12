@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>progress 进度条</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function btn(){
+		/*for (var i = 0; i < 100; i++) {
+			setTimeOut(function(){
+				updateprogress(i);
+			},100)			
+		}  for循环单线程所以看不到进度效果*/
+		var i=0;
+		function thread_one(){
+			if(i<=100){
+				i++;
+				updateprogress(i);
+			}
+		}
+		setInterval(thread_one,100);
+	}
+	function updateprogress(newValue){
+		var pbar=document.getElementById("progress");
+		pbar.value=newValue;
+		pbar.getElementsByTagName("span")[0].textContent=newValue;
+	}
+</script>
+<section>
+	<h2>progress元素的使用</h2>
+	<p>完成的百分比<progress value="" style="background:#446200;" max="100" id="progress"><span>0</span>%</p>
+	<input type="button" onclick="btn()" value="点击" name="">
+</section>
+</body>
+</html>

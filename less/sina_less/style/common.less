@@ -1,0 +1,20 @@
+@charset "uft-8";
+//less库
+@import "less/z";
+//公用的变量
+@import "bl";
+
+.reset();
+
+//header
+.header{
+	@h:48px;
+	@border:2px;
+	border: @border solid @link_hover;
+	height: @h;
+	.logo{
+		height: 26px;
+		width: 80px;
+		background: :url("../img/logo.jpg") left top no-repeat;
+	}
+}

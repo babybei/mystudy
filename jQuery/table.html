@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tr上下移动</title>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		function moveTr(obj){
+		 var btnName = obj.name;  //获得按钮的name属性值
+		 if(btnName == "btn1"){   //发起上移指令
+		 	prevMoveTrCommand(obj);
+		 }else if(btnName == "btn2"){  //发起下移指令
+		 	nextMoveTrCommand(obj);
+		 }
+		}
+		//上移指令
+		function prevMoveTrCommand(obj){
+		 var $jqFirstTr = jQuery("#show_table_id tr:first-child");   //获得第一个tr的对象
+		 var firstTrVal = $jqFirstTr.find(".td_num").text();   //获得第一个tr的序号
+		 var objVal = jQuery(obj).parent().parent().find(".td_num").text();  //获得本身tr的序号
+		 if(objVal == firstTrVal){  //判断是否在把第一行向上移
+		 	return;
+		 }else{
+		  prevMoveTrOpra(obj);   //调用上移操作方法
+		}
+		}
+		//上移操作
+		function prevMoveTrOpra(obj){
+		 var $jqObj = jQuery(obj).parent().parent();  //获得本身tr的信息
+		 var $trOObjt = jQuery("#hide_tr_id").append($jqObj.html());  //把本身tr放入临时信息
+		 var $jqSublObj = jQuery(obj).parent().parent().prev();   //获得上一个tr的信息
+		 $jqSublObj.find(".td_num").text(Number($jqSublObj.find(".td_num").text())+1);    //把上一个tr序号加1
+		 $jqObj.html("").append($jqSublObj.html());   //把本身tr清空并插入上一个信息
+		 
+		 $trOObjt.find(".td_num").text(Number($trOObjt.find(".td_num").text())-1);    //把本身tr序号减1
+		 $jqSublObj.html("").append($trOObjt.html());   //把上一个tr清空并插入临时保存的tr信息
+		 jQuery("#hide_tr_id").html("");   //清空临时tr信息
+		}
+		//下移指令
+		function nextMoveTrCommand(obj){
+		 var $jqLastTr = jQuery("#show_table_id tr:last-child");   //获得最后一个tr的对象
+		 var lastTrVal = $jqLastTr.find(".td_num").text();   //获得最后一个tr的序号
+		 var objVal = jQuery(obj).parent().parent().find(".td_num").text();  //获得本身tr的序号
+		 if(objVal == lastTrVal){  //判断是否想把最后一行往下移
+		 	return;
+		 }else{
+		  nextMoveTrOpra(obj);    //调用下移操作方法
+		}
+		}
+		//下移操作
+		function nextMoveTrOpra(obj){
+		 var $jqObj = jQuery(obj).parent().parent();  //获得本身tr的信息
+		 var $trOObjt = jQuery("#hide_tr_id").append($jqObj.html());  //把本身tr放入临时信息
+		 var $jqSiblObj = jQuery(obj).parent().parent().next();   //获得下一个tr的信息
+		 
+		 $jqSiblObj.find(".td_num").text(Number($jqSiblObj.find(".td_num").text())-1);    //把下一个tr序号减1
+		 $jqObj.html("").append($jqSiblObj.html());   //把本身tr清空并插入下一个tr信息
+		 $trOObjt.find(".td_num").text(Number($trOObjt.find(".td_num").text())+1);    //把本身tr序号加1
+		 $jqSiblObj.html("").append($trOObjt.html());   //把下一个tr清空并插入临时保存的tr信息
+		 jQuery("#hide_tr_id").html("");    //清空临时tr信息
+		}
+</script>
+</head>
+<body>
+	<table id="hide_table_id" style="display:none;"><tr id="hide_tr_id"></tr></table>
+	<table id="show_table_id" border="1">
+		<tr>
+			<td class="td_num">1</td>
+			<td>aaaaaaaaaa</td>
+			<td>@@@@@@@</td>
+			<td align="center"><input type="button" name="btn1" value="↑" onclick="moveTr(this);" /> &nbsp; <input type="button" name="btn2" value="↓" onclick="moveTr(this);" /></td>
+			<td>注释1</td>
+		</tr>
+		<tr>
+			<td class="td_num">2</td>
+			<td>bbbbbbbbbbbbb</td>
+			<td>#########</td>
+			<td align="center"><input type="button" name="btn1" value="↑" onclick="moveTr(this);" /> &nbsp; <input type="button" name="btn2" value="↓" onclick="moveTr(this);" /></td>
+			<td>注释2</td>
+		</tr>
+		<tr>
+			<td class="td_num">3</td>
+			<td>cccccccccccc</td>
+			<td>$$$$$$$$$$$$</td>
+			<td align="center"><input type="button" name="btn1" value="↑" onclick="moveTr(this);" /> &nbsp; <input type="button" name="btn2" value="↓" onclick="moveTr(this);" /></td>
+			<td>注释3</td>
+		</tr>
+		<tr>
+			<td class="td_num">4</td>
+			<td>ddddddddddddd</td>
+			<td>&&&&&&&&&&&&&</td>
+			<td align="center"><input type="button" name="btn1" value="↑" onclick="moveTr(this);" /> &nbsp; <input type="button" name="btn2" value="↓" onclick="moveTr(this);" /></td>
+			<td>注释4</td>
+		</tr>
+		<tr>
+			<td class="td_num">5</td>
+			<td>eeeeeeeeeeeeee</td>
+			<td>***************</td>
+			<td align="center"><input type="button" name="btn1" value="↑" onclick="moveTr(this);" /> &nbsp; <input type="button" name="btn2" value="↓" onclick="moveTr(this);" /></td>
+			<td>注释5</td>
+		</tr>
+	</table>
+</body>
+</html>

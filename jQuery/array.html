@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function oSort(arr)
+        {
+            var result ={};
+            var newArr=[];
+            for(var i=0;i<arr.length;i++)
+            {
+            	debugger;
+                if(!result[arr[i]])
+                {
+                    newArr.push(arr[i]);
+                    result[arr[i]]=1;
+                }
+            }
+            return newArr
+        }
+        var arr=["a","b","a","c","d","b"];
+        oSort(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

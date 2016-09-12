@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>输出多选框的个数</title>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		/*window.onload=function(){
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				var arrays=new Array();
+				var items=document.getElementsByName("check");
+				for (var i = 0; i < items.length; i++) {
+					if(items[i].checked){
+						arrays.push(items[i].value);
+					}
+				}
+				alert("选中的个数为："+arrays.length);
+			}
+		};*/
+		$(function(){
+			$("#btn").click(function(){
+				var length=$("input[name='check']:checked").length;
+				alert("选中的个数为："+length);
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="checkbox" name="check" value="1" checked="">
+	<input type="checkbox" name="check" value="2" >
+	<input type="checkbox" name="check" value="3" >
+	<input type="checkbox" name="check" value="4" checked="">
+	<input type="btn" id="btn" value="你选中的个数" name="">
+</body>
+</html>

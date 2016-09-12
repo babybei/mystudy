@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>meter元素</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function btn(){
+			var i=0;
+			function thread_one(){
+				if(i<=100)
+				{
+					i++;
+					upateMeter(i);
+				}
+			}
+			setInterval(thread_one,100);
+		}
+		function upateMeter(newValue){
+			var m=document.getElementById("mymeter");
+			m.value=newValue;
+			m.getElementsByTagName("span")[0].textContent=newValue;
+		}
+	</script>
+	<meter id="meter" value="40" min="0" max="100" low="10" high="90" optimum="80"></meter>
+	<meter>40/100</meter>
+	<meter id="mymeter" min="0" max="100"><span>0</span></meter>
+	<input type="button" onclick="btn()" value="点击" name="">
+</body>
+</html>

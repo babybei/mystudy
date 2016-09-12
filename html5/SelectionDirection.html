@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>SelectionDirection属性</title>
+</head>
+<body>
+<script type="text/javascript">
+	function AD(){
+		var control=document.forms[0]['text'];
+		var Direction=control.selectionDirection;
+		alert(Direction);  /*弹出以怎样的形式进行选择*/
+	}
+</script>
+<form>
+	<p>针对input，textarea元素，当用户在这两个元素中用鼠标选取部分文字时，可以使用该属性来获取方向。当用户正向选取文字时，该属性值为“forward”，当用户方向选取文字时，该属性值为“backward”。当用户没有选择任何文字时，该属性值为“forward”。</p>
+	<input type="text" name="text">
+	<input type="button" value="点击我" onclick="AD()" name="">
+</form>
+</body>
+</html>

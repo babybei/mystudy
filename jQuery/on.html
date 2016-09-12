@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#mybtns{
+			height: 100px; background-color: #eee; border-radius:5px 5px 0 0; box-shadow:3px 3px 3px #0cc; width: 100%;
+		}
+	</style>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var $_div=$("#mybtns");
+			var a=1;
+			$("#addbtns").click(function(){
+				$_div.append('<input type="button" name="test" value="按钮'+a+'"/>');
+				a++;
+			});
+			$_div.on('click','input[name=test]',function(){
+				alert("我是有效的on方法，你能看见吗："+this.value);
+			});
+		})
+	</script>
+</head>
+<body>
+	<button id="addbtns">点击我</button>
+	<div id="mybtns">
+	</div>
+</body>
+</html>

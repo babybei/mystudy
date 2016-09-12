@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Range对象setStartBefore及setEndAfter方法</title>
+	<script type="text/javascript">
+		function deleteRow(){
+			var table=document.getElementById("myTable");
+			if(table.rows.length>0){
+				var row=table.rows[0];
+				var rangeObj=document.createRange();
+				rangeObj.setStartBefore(row);
+				rangeObj.setEndAfter(row);
+				rangeObj.deleteContents();
+			}
+		}
+	</script>
+</head>
+<body>
+<table id="myTable" border="1" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>内容1</td>
+		<td>内容2</td>
+	</tr>
+	<tr>
+		<td>内容3</td>
+		<td>内容4</td>
+	</tr>
+</table>
+<button onclick="deleteRow()">删除第一行</button>
+</body>
+</html>

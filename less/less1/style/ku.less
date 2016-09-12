@@ -1,0 +1,34 @@
+.clearfix(){
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	zoom: 1;
+}
+//混合
+.bc(){
+	margin-left: auto;
+	margin-right: auto;
+}
+.fl(@fl:left){
+	float: @fl;
+	display: inline;
+}
+.fr(@fl:right){
+	float: @fl;
+	display: inline;
+}
+
+.font14(){
+	font-size: 14px;
+}
+.rel(){
+	position: relative;
+}
+.abs(){
+	position: absolute;
+}
+.fix{
+	position: fixed;
+}

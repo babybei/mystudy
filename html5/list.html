@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>list属性</title>
+</head>
+<body>
+<form>
+	<p>为单行文本框增加一个List属性，该属性的值为某个datalist元素的id，datalist为html5新增元素，类似选择框。当用户想要设定的值不在选择列表之内时，允许自动输入。datalist本身不显示，而是当文本框获得焦点时以提示输入的方式显示。</p>
+	<input type="text" name="greeting" list="greentings">
+	<datalist id="greentings" style="display:none;">
+		<option value="HTML5学习">HTML5学习</option>
+		<option value="CSS3学习">CSS3学习</option>
+		<option value="JavaScript">JavaScript学习</option>
+	</datalist>
+</form>
+</body>
+</html>

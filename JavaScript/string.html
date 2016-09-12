@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>string字符串对象</title>
+</head>
+<body>
+<script type="text/javascript">
+	var str="Hello World";
+	document.write("字符串的长度为："+str.length);
+	document.write("<br/>"+str.indexOf("World"));  //使用indexOf查询字符串是否存在，不存在返回-1；
+	document.write("<br/>"+str.match("World"));  //匹配字符串是否存在，存在返回字符串，不存在返回空
+	document.write("<br/>"+str.replace("World","baby"));  //字符串替换
+	document.write("<br/>"+str.toUpperCase());
+	document.write("<br/>"+str.toLowerCase());
+	var str1="Hello,Baby,Beijing";
+	var s=str1.split(',');
+	document.write("<br/>"+s[1]);
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Range对象compareBoundaryPoints对象</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function testPlace(){
+			var blodTest=document.getElementById("blodTest");
+			var blodRange=document.createRange();
+			blodRange.selectNodeContents(blodTest.firstChild);
+			var selection=document.getSelection();
+			if(selection.rangeCount>0){
+				var selRange=selection.getRangeAt(0);
+				if(selRange.compareBoundaryPoints(Range.START_TO_END,blodRange)<=0){
+					alert("选取的文字在粗体前面");
+				}
+				else{
+					if(selRange.compareBoundaryPoints(Range.END_TO_START,blodRange)>=0){
+						alert("选择的文字在粗体后面");
+					}
+				}
+			}
+		}
+	</script>
+	这是一段文字，我也不<b id="blodTest">知道</b>写些什么。随便吧
+	<br/>
+	<button onclick="testPlace()">位置比较</button>
+</body>
+</html>

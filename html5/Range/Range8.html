@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Range对象insertNode方法</title>
+</head>
+<body>
+<script type="text/javascript">
+	function moveButton(){
+		var btn=document.getElementById("button");
+		var selection=document.getSelection();
+		if(selection.rangeCount>0){
+			var range=selection.getRangeAt(0);
+			range.insertNode(btn);
+		}
+	}
+</script>
+<div onmouseup="moveButton()" style="width:400px; background-color:#EEBDBD;">这里是我随便书写的内容这里是我随便书写的内容这里是我随便书写的内容这里是我随便书写的内容</div>
+<button id="button">按钮</button>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>val()方法的选中功能</title>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#single").val("选择2号")
+			$("#multiple").val(["选择2号","选择3号"]);
+			$(":checkbox").val(["check2","check4"]);
+			$(":radio").val(["radio2"]);
+		})
+	</script>
+</head>
+<body>
+	<select name="" id="single">
+		<option value="选择1号">选择1号</option>
+		<option value="选择2号">选择2号</option>
+		<option value="选择3号">选择3号</option>
+	</select>
+	<select name="" id="multiple" multiple="multiple" style="height:120px;">
+		<option value="选择1号" selected="selected">选择1号</option>
+		<option value="选择2号">选择2号</option>
+		<option value="选择3号">选择3号</option>
+		<option value="选择4号">选择4号</option>
+		<option value="选择5号" selected="">选择5号</option>
+	</select>
+	<input type="checkbox" name="" value="check1" id="">多选1
+	<input type="checkbox" name="" value="check2" id="">多选2
+	<input type="checkbox" name="" value="check3" id="">多选3
+	<input type="checkbox" name="" value="check4" id="">多选4
+	<input type="radio" name="" value="radio1" id="">单选1
+	<input type="radio" name="" value="radio2" id="">单选2
+	<input type="radio" name="" value="radio3" id="">单选3
+</body>
+</html>

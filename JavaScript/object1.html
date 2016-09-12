@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript内置对象</title>
+</head>
+<body>
+	<!--创建对象-->
+	<script type="text/javascript">
+		/*1.定义并创建对象实例*/
+		/*people=new Object();
+		people.name="iwen";
+		people.age="30";
+		document.write("name:"+people.name+",age:"+people.age);*/
+		/*people={name:"iwen",age:"30"};
+		document.write("name:"+people.name+",age:"+people.age);*/
+		/*2.使用函数来定义对象，然后创建新的对象实例。*/
+		function people(name,age){
+			this._name=name;
+			this._age=age;
+		}
+		son=new people("iwen",30);
+		document.write("name:"+son._name+",age:"+son._age);
+	</script>
+</body>
+</html>

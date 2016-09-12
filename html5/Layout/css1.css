@@ -1,0 +1,59 @@
+ul,li{
+	margin: 0;padding: 0; list-style: none;
+}
+.head{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 2rem;
+	line-height: 2rem;
+	background-color: #2478FF;
+	color: white;
+	padding-left: .3rem;
+}
+.content{
+	position: absolute;
+	top: 2rem;
+	left: 0;
+	right: 0;
+}
+.nav{
+	position: absolute;
+	top: 0;
+	height: 1.5rem;
+	left: 0;
+	right: 0;
+	background-color: #EAE4EA;
+}
+.content .list{
+	position: absolute;
+	top: 1.5rem;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #F1EEEE;
+	overflow: hidden;
+}
+.content .list ul li{
+	position: relative;
+	height: 2.8rem;
+	border-bottom: 1px solid #eee;
+}
+.content .list ul li .icon{
+	position: absolute;
+	left: 1.2rem;
+	width: 1.8rem;
+	height: 1.8rem;
+	top: 0.5rem;
+	background-image: url('../img/icon1.png');
+	background-size: 1.8rem 1.8rem;
+}
+.content .list ul li .name{
+	position: absolute;
+	left: 3.4rem;
+	top: .5rem;
+	width: 14rem;
+	height: 1.8rem;
+	line-height: 1.8rem;
+}

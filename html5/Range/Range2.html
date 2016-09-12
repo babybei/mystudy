@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Range的selectNode及selectNodeContent方法</title>
+</head>
+<body>
+<script type="text/javascript">
+	function deleteRangeConent(onlyContent){
+		var div=document.getElementById("div");
+		var rangeObj=document.createRange();
+		if(onlyContent){
+			rangeObj.selectNodeContents(div);
+			rangeObj.deleteContents();
+		}
+		else{
+			rangeObj.selectNode(div);
+			rangeObj.deleteContents();
+		}
+	}
+</script>
+<div id="div" style="background-color:#e0a0b0; width:300px; height:50px;">
+	元素中的内容
+</div>
+<button onclick="deleteRangeConent(true)">删除内容</button>
+<button onclick="deleteRangeConent(false)">删除内容</button>
+</body>
+</html>
